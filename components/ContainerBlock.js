@@ -11,7 +11,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const meta = {
     title: "Vikash Kushwaha - Full Stack Developer",
     description: `I've been developing websites for 3 years straight. Get in touch with me to know more.`,
-    image: "/avatar.png",
+    image: "/avatar.jpeg",
     type: "website",
     ...customMeta,
   };
