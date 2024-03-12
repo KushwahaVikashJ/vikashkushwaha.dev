@@ -73,6 +73,7 @@ export default function AboutMe() {
               <div className="flex flex-row justify-start items-center">
                 <a
                   href={userData.socialLinks.discord}
+                  target="_blank"
                   className="flex flex-row items-center space-x-4 group"
                 >
                   <div className="my-4">&rarr;</div>
@@ -85,6 +86,7 @@ export default function AboutMe() {
               <div className="flex flex-row justify-start items-center">
                 <a
                   href={userData.socialLinks.github}
+                  target="_blank"
                   className="flex flex-row items-center space-x-4 group"
                 >
                   <div className="my-4">&rarr;</div>
@@ -97,6 +99,7 @@ export default function AboutMe() {
               <div className="flex flex-row justify-start items-center">
                 <a
                   href={userData.socialLinks.linkedin}
+                  target="_blank"
                   className="flex flex-row items-center space-x-4 group"
                 >
                   <div className="my-4">&rarr;</div>
