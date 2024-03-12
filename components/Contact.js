@@ -73,19 +73,19 @@ export default function Contact() {
             </div>
             <div className="social-icons flex flex-row space-x-8">
               <a
-                href={userData.socialLinks.facebook}
+                href={userData.socialLinks.discord}
                 className="h-10 w-10 rounded-full hover:bg-blue-500 flex items-center justify-center cursor-pointer"
               >
                 <SiDiscord className="h-5 w-5" />
               </a>
               <a
-                href={userData.socialLinks.twitter}
+                href={userData.socialLinks.linkedin}
                 className="h-10 w-10 rounded-full hover:bg-blue-500 flex items-center justify-center cursor-pointer"
               >
                 <SiLinkedin className="h-5 w-5" />
               </a>
               <a
-                href={userData.socialLinks.instagram}
+                href={userData.socialLinks.github}
                 className="h-10 w-10 rounded-full hover:bg-blue-500 flex items-center justify-center cursor-pointer"
               >
                 <SiGithub className="h-5 w-5" />
