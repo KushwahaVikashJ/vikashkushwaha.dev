@@ -7,7 +7,6 @@ import { SiDiscord, SiGithub, SiLinkedin } from "react-icons/si";
 
 export default function Navbar() {
   const router = useRouter();
-  console.log(router.asPath);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 

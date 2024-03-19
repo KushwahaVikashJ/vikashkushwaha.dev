@@ -1,8 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import userData from "@constants/data";
 import { SiDiscord, SiGithub, SiLinkedin } from "react-icons/si";
+import emailjs from "@emailjs/browser";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { LoadingButton } from "./ui/loading-button";
+
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { useToast } from "./ui/use-toast";
+
+const FormSchema = z.object({
+  name: z.string().min(1, {
+    message: "Required.",
+  }),
+  email: z.string().min(1, {
+    message: "Required.",
+  }),
+  message: z.string().min(1, {
+    message: "Required.",
+  }),
+});
 
 export default function Contact() {
+  const [showLoader, setShowLoader] = useState(false);
+  const { toast } = useToast();
+  const form = useForm({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    const templateParams = data;
+    setShowLoader(true);
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        (response) => {
+          setShowLoader(false);
+          toast({
+            title: "Message sent successfully. I'll get back to you soon.",
+          });
+        },
+        (err) => {
+          setShowLoader(false);
+          toast({
+            variant: "destructive",
+            title: err,
+          });
+        }
+      );
+  };
+
   return (
     <section>
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800 antialiased">
@@ -95,43 +166,74 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <form className="form rounded-lg bg-white p-4 flex flex-col">
-            <label htmlFor="name" className="text-sm text-gray-600 mx-4">
-              {" "}
-              Your Name
-            </label>
-            <input
-              type="text"
-              className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
-              name="name"
-            />
-            <label htmlFor="email" className="text-sm text-gray-600 mx-4 mt-4">
-              Email
-            </label>
-            <input
-              type="text"
-              className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
-              name="email"
-            />
-            <label
-              htmlFor="message"
-              className="text-sm text-gray-600 mx-4 mt-4"
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="form rounded-lg bg-white p-8 flex flex-col space-y-5"
             >
-              Message
-            </label>
-            <textarea
-              rows="4"
-              type="text"
-              className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
-              name="message"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-blue-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-xs font-bold"
-            >
-              Send Message
-            </button>
-          </form>
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm text-gray-600">
+                      Name
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 focus:ring-2 focus:border-none ring-blue-500 dark:bg-white"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red-500" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm text-gray-600 mt-4">
+                      Email
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 focus:ring-2 focus:border-none ring-blue-500"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red-500" />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-sm text-gray-600 mt-4">
+                      Message
+                    </FormLabel>
+                    <FormControl>
+                      <Textarea
+                        className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 focus:ring-2 focus:border-none ring-blue-500 resize-none"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red-500" />
+                  </FormItem>
+                )}
+              />
+              <LoadingButton
+                className="bg-blue-500 rounded-md w-1/2 mt-8 py-2 text-gray-50 text-xs font-bold"
+                type="submit"
+                loading={showLoader}
+              >
+                Send Message
+              </LoadingButton>
+            </form>
+          </Form>
         </div>
       </div>
     </section>
