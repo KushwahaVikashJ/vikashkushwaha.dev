@@ -45,6 +45,16 @@ const userData = {
       imgUrl: "/dev-connector.png",
     },
     {
+      title: "My Burger Builder",
+      link: "https://burger-builder-7ba57.web.app/",
+      imgUrl: "/burger-builder.png",
+    },
+    {
+      title: "Budgety",
+      link: "https://gleeful-donut-218cf7.netlify.app/",
+      imgUrl: "/budgety.png",
+    },
+    {
       title: "Tr Capital",
       link: "",
       imgUrl: "/tr-capital.png",
