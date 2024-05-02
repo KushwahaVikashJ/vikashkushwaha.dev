@@ -9,6 +9,8 @@ import {
   SiGithub,
   SiTailwindcss,
   SiNextdotjs,
+  SiGraphql,
+  SiPostman,
 } from "react-icons/si";
 
 export default function AboutMe() {
@@ -65,7 +67,6 @@ export default function AboutMe() {
                 and I'd love to work for you.
               </p>
             </div>
-            {/* Social Links */}
             <h1 className="text-xl font-semibold text-gray-700 mt-8 dark:text-gray-200">
               Social Links
             </h1>
@@ -111,7 +112,6 @@ export default function AboutMe() {
               </div>
             </div>
           </div>
-          {/* Text area */}
           <div className="col-span-1 md:col-span-2">
             {userData.about.description?.map((desc, idx) => (
               <p
@@ -134,6 +134,8 @@ export default function AboutMe() {
               <SiMongodb color="#27AE60" className="h-20 w-20 mx-4 my-4" />
               <SiGit color="#E74C3C" className="h-20 w-20 mx-4 my-4" />
               <SiGithub color="#2C3E50" className="h-20 w-20 mx-4 my-4" />
+              <SiGraphql color="#e10098" className="h-20 w-20 mx-4 my-4" />
+              <SiPostman color="#FF6C37" className="h-20 w-20 mx-4 my-4" />
             </div>
           </div>
         </div>

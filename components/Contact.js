@@ -81,7 +81,7 @@ export default function Contact() {
           Contact
         </h1>
       </div>
-      <div className="relative z-10 rounded-md shadow-md bg-[#02044A] p-4 md:p-10 lg:p-20 max-w-6xl mx-auto mb-20 -mt-4">
+      <div className="relative z-10 rounded-md shadow-md bg-[#02044A] p-4 md:p-10 lg:p-20 max-w-6xl mx-auto mb-20 mt-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="md:ml-4">
             <header className="">
@@ -146,21 +146,21 @@ export default function Contact() {
               <a
                 href={userData.socialLinks.discord}
                 target="_blank"
-                className="h-10 w-10 rounded-full hover:bg-blue-500 flex items-center justify-center cursor-pointer"
+                className="h-10 w-10 rounded-full text-white hover:bg-blue-500 flex items-center justify-center cursor-pointer"
               >
                 <SiDiscord className="h-5 w-5" />
               </a>
               <a
                 href={userData.socialLinks.linkedin}
                 target="_blank"
-                className="h-10 w-10 rounded-full hover:bg-blue-500 flex items-center justify-center cursor-pointer"
+                className="h-10 w-10 rounded-full text-white hover:bg-blue-500 flex items-center justify-center cursor-pointer"
               >
                 <SiLinkedin className="h-5 w-5" />
               </a>
               <a
                 href={userData.socialLinks.github}
                 target="_blank"
-                className="h-10 w-10 rounded-full hover:bg-blue-500 flex items-center justify-center cursor-pointer"
+                className="h-10 w-10 rounded-full text-white hover:bg-blue-500 flex items-center justify-center cursor-pointer"
               >
                 <SiGithub className="h-5 w-5" />
               </a>

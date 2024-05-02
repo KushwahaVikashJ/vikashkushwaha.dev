@@ -1,4 +1,4 @@
-## My Portfolio 💯
+## Welcome to my portfolio! Here, you'll find a showcase of my latest projects, about me and my experiences. 💯
 
 Technologies Used:
 

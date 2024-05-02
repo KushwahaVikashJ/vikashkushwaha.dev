@@ -6,21 +6,48 @@ const userData = {
   email: "kushwahavikas499@gmail.com",
   phone: "+91 7435977621",
   address: "Surat, Gujarat, India.",
+  repos: [
+    {
+      name: "rent-real-estate",
+      description: "Add and Showcase Real-Estate(rent, sell) property",
+      url: "https://github.com/KushwahaVikashJ/rent-real-estate",
+    },
+    {
+      name: "form-builder",
+      description: "Create forms with a stunning drag and drop designer",
+      url: "https://github.com/KushwahaVikashJ/form-builder",
+    },
+    {
+      name: "dev-connector",
+      description: "A platform for developers to connect",
+      url: "https://github.com/KushwahaVikashJ/dev-connector",
+    },
+  ],
   projects: [
     {
       title: "Teckle",
-      link: "#",
+      link: "https://app.teckle.io/",
       imgUrl: "/teckle.png",
     },
     {
-      title: "Tr Capital",
-      link: "#",
-      imgUrl: "/tr-capital.png",
+      title: "Rent Real Estate",
+      link: "https://rent-real-estate.vercel.app/",
+      imgUrl: "/rent-real-estate.png",
+    },
+    {
+      title: "Form Builder",
+      link: "https://form-builder-nine-hazel.vercel.app/",
+      imgUrl: "/form-builder.png",
     },
     {
       title: "Dev Connector",
-      link: "#",
+      link: "",
       imgUrl: "/dev-connector.png",
+    },
+    {
+      title: "Tr Capital",
+      link: "",
+      imgUrl: "/tr-capital.png",
     },
   ],
   about: {
