@@ -23,11 +23,11 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://www.vikashkushwaha.dev/${router.asPath}`}
+          content={`https://www.vikashkushwaha.dev${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://www.vikashkushwaha.dev/${router.asPath}`}
+          href={`https://www.vikashkushwaha.dev${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Vikash Kushwaha" />
