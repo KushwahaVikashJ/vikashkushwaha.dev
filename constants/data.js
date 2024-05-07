@@ -100,7 +100,7 @@ const userData = {
     },
   ],
   resumeUrl:
-    "https://drive.google.com/file/d/1UY5m8JArTf8qaR5O4DqhKqvRPFgAemEQ/view?usp=drive_link",
+    "https://drive.google.com/file/d/1Lv2fZ60Fb6wYlkMIn07qtUnu4NN6CHQJ/view?usp=sharing",
   socialLinks: {
     discord: "https://discord.com/channels/@me/1091736082787356683",
     linkedin: "https://www.linkedin.com/in/kushwaha-vikash-323144170/",
