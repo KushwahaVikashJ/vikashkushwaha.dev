@@ -11,6 +11,7 @@ import {
   SiNextdotjs,
   SiGraphql,
   SiPostman,
+  SiTypescript,
 } from "react-icons/si";
 
 export default function AboutMe() {
@@ -126,9 +127,10 @@ export default function AboutMe() {
               Tech Stack
             </h1>
             <div className="flex flex-row flex-wrap mt-8">
-              <SiJavascript color="#F4D03F" className="h-20 w-20 mx-4 my-4" />
               <SiReact color="#3498DB" className="h-20 w-20 mx-4 my-4" />
               <SiNextdotjs className="h-20 w-20 mx-4 my-4" />
+              <SiJavascript color="#F4D03F" className="h-20 w-20 mx-4 my-4" />
+              <SiTypescript color="#719af4" className="h-20 w-20 mx-4 my-4" />
               <SiTailwindcss color="#3498DB" className="h-20 w-20 mx-4 my-4" />
               <SiNodedotjs color="#2C3E50" className="h-20 w-20 mx-4 my-4" />
               <SiMongodb color="#27AE60" className="h-20 w-20 mx-4 my-4" />

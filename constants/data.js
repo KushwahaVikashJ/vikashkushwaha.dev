@@ -8,14 +8,14 @@ const userData = {
   address: "Surat, Gujarat, India.",
   repos: [
     {
+      name: "food-ordering-app",
+      description: "Manage restaurant and food ordering platform",
+      url: "https://github.com/KushwahaVikashJ/food-ordering-app-frontend",
+    },
+    {
       name: "rent-real-estate",
       description: "Add and Showcase Real-Estate(rent, sell) property",
       url: "https://github.com/KushwahaVikashJ/rent-real-estate",
-    },
-    {
-      name: "form-builder",
-      description: "Create forms with a stunning drag and drop designer",
-      url: "https://github.com/KushwahaVikashJ/form-builder",
     },
     {
       name: "dev-connector",
@@ -28,6 +28,11 @@ const userData = {
       title: "Teckle",
       link: "https://app.teckle.io/",
       imgUrl: "/teckle.png",
+    },
+    {
+      title: "Food Ordering App",
+      link: "https://food-ordering-app-frontend-7n46.onrender.com/",
+      imgUrl: "/food-ordering-app.png",
     },
     {
       title: "Rent Real Estate",
